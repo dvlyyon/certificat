@@ -1,6 +1,6 @@
 [ default ]
 home = .
-name = ca-c1-c1 
+name = ca1 
 
 [ req ]
 default_bits = 2048
