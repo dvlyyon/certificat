@@ -49,7 +49,7 @@ openssl req -new -sha256 -key $pr_dir/$leaf_name.pkcs8.key -config $leaf_name.cn
 #openssl req -new -sha256 -key ne127.pkcs8.key -config infinera_sh_qa_ne127.cnf -out ne127.csr
 #
 
-openssl ca -config $ca_name.cnf -in $crt_dir/$leaf_name.csr -out $crt_dir/$leaf_name.crt -extensions v3_req
+openssl ca -config $ca_name.cnf -in $crt_dir/$leaf_name.csr -out $crt_dir/$leaf_name.crt
 #openssl ca -config infinera_sh.cnf -in qa.csr -out qa.crt
 #openssl ca -config infinera_sh_qa.cnf -in ne127.csr -out ne127.crt
 
