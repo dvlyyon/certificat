@@ -28,7 +28,8 @@ touch $db_dir/$ca11_name.index
 
 openssl genrsa -out $pr_dir/$ca_name.key 2048
 openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$ca_name.key -out $pr_dir/$ca_name.pkcs8.key
-openssl req -new -x509 -key $pr_dir/$ca_name.pkcs8.key -out $crt_dir/$ca_name.crt -days 365 -config $ca_name.cnf
+openssl req -new -x509 -key $pr_dir/$ca_name.pkcs8.key -out $crt_dir/$ca_name.crt -days 365 -config $ca_name.cnf -extensions v3_req
+
 
 openssl genrsa -out $pr_dir/$ca1_name.key 2048
 openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$ca1_name.key -out $pr_dir/$ca1_name.pkcs8.key
@@ -45,6 +46,14 @@ openssl req -new -sha256 -key $pr_dir/$leaf_name.pkcs8.key -config $leaf_name.cn
 openssl ca -config $ca_name.cnf -in $crt_dir/$ca1_name.csr -out $crt_dir/$ca1_name.crt
 openssl ca -config $ca1_name.cnf -in $crt_dir/$ca11_name.csr -out $crt_dir/$ca11_name.crt
 openssl ca -config $ca11_name.cnf -in $crt_dir/$leaf_name.csr -out $crt_dir/$leaf_name.crt
+
+openssl crl2pkcs7 -nocrl -out $crt_dir/$ca_name.p7b -certfile $crt_dir/$ca_name.crt
+openssl crl2pkcs7 -nocrl -out $crt_dir/$ca1_name.p7b -certfile $crt_dir/$ca1_name.crt 
+openssl crl2pkcs7 -nocrl -out $crt_dir/$ca11_name.p7b -certfile $crt_dir/$ca11_name.crt 
+
+
+openssl pkcs12 -export -name "My Certificates" -out $leaf_name.pfx -inkey private/$leaf_name.key -in $leaf_name.crt 
+openssl pkcs12 -export -name "My Certificates" -out $leaf_name.chain.pfx -inkey private/$leaf_name.key -in $leaf_name.crt -certfile $ca11_name.crt -certfile $ca1_name.crt
 
 cat $crt_dir/$leaf_name.crt $crt_dir/$ca11_name.crt $crt_dir/$ca1_name.crt | sed -n '/-BEGIN CERT/,/-END CERT/p' > $crt_dir/$leaf_name.chain.crt
 
