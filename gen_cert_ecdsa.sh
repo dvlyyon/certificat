@@ -7,10 +7,10 @@ ncrt_dir=./certs
 ca_name="ca_ecdsa"
 leaf_name="myne1_ecdsa"
 
-rm -rf $pr_dir
+#rm -rf $pr_dir
 rm -rf $db_dir
 rm -rf $ncrt_dir
-rm -rf $crt_dir/*.crt
+#rm -rf $crt_dir/*.crt
 rm -rf $crt_dir/*.csr
 
 mkdir -p $pr_dir
