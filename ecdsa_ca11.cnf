@@ -35,11 +35,11 @@ default_ca = my_ca
 [ my_ca ]
 #  a text file containing the next serial number to use in hex. Mandatory.
 #  This file must be present and contain a valid serial number.
-serial = $home/db/$name.srl
+serial = $home/ecdsa_db/$name.srl
 
 # the text database file to use. Mandatory. This file must be present though
 # initially it will be empty.
-database = $home/db/$name.index
+database = $home/ecdsa_db/$name.index
 
 # specifies the directory where new certificates will be placed. Mandatory.
 new_certs_dir = $home/certs
