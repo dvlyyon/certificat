@@ -1,8 +1,8 @@
 #!/bin/sh
 crt_dir=.
-pr_dir=./private
-db_dir=./db
-ncrt_dir=./certs
+pr_dir=./private_ecdsa1
+db_dir=./db_ecdsa1
+ncrt_dir=./certs_ecdsa1
 
 ca_name="ca_ecdsa"
 leaf_name="myne1_ecdsa"

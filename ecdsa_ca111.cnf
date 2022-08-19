@@ -1,6 +1,6 @@
 [ default ]
 home = .
-name = ecdsa_ca
+name = ecdsa_ca111
 
 [ req ]
 default_bits = 2048
@@ -51,7 +51,7 @@ certificate = $home/$name.crt
 private_key = $home/ecdsa_private/$name.key
 
 # the message digest algorithm. Remember to not use MD5
-default_md = sha512
+default_md = sha256
 
 # for how many days will the signed certificate be valid
 default_days = 3650

@@ -2,7 +2,7 @@
 *.p7b
 *.pfx
 *.csr
-db
-private
-certs
+*db/
+*private/
+*certs/
 
