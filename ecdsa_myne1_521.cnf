@@ -1,6 +1,6 @@
 [ default ]
 home = .
-name = ecdsa_myne1_512
+name = ecdsa_myne1_521
 
 [ req ]
 default_bits = 2048

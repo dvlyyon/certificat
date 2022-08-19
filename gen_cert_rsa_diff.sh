@@ -33,7 +33,7 @@ openssl ca -config $ca_name.cnf -in $crt_dir/$leaf_name3072.csr -out $crt_dir/$l
 openssl ca -config $ca_name.cnf -in $crt_dir/$leaf_name4096.csr -out $crt_dir/$leaf_name4096.crt
 
 
-openssl pkcs12 -export -name "My Certificates $leaf_name4096" -out $leaf_name4096.pfx -inkey private/$leaf_name4096.key -in $leaf_name4096.crt 
-openssl pkcs12 -export -name "My Certificates $leaf_name3072" -out $leaf_name3072.pfx -inkey private/$leaf_name3072.key -in $leaf_name3072.crt 
+openssl pkcs12 -export -name "My Certificates $leaf_name4096" -out $leaf_name4096.pfx -inkey $pr_dir/$leaf_name4096.key -in $leaf_name4096.crt 
+openssl pkcs12 -export -name "My Certificates $leaf_name3072" -out $leaf_name3072.pfx -inkey $pr_dir/$leaf_name3072.key -in $leaf_name3072.crt 
 
 
