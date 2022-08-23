@@ -33,7 +33,7 @@ touch $db_dir/$ca111_name.index
 echo "create $ca_name"
 openssl ecparam -name secp521r1 -genkey -out $pr_dir/$ca_name.key
 openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$ca_name.key -out $pr_dir/$ca_name.pkcs8.key
-openssl req -new -x509 -key $pr_dir/$ca_name.pkcs8.key -out $crt_dir/$ca_name.crt -days 3650 -config $ca_name.cnf -extensions v3_req
+openssl req -new -x509 -key $pr_dir/$ca_name.pkcs8.key -out $crt_dir/$ca_name.crt -days 3650 -sha512 -config $ca_name.cnf -extensions v3_req
 
 
 echo "create $ca1_name"
