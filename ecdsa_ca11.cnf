@@ -42,7 +42,7 @@ serial = $home/ecdsa_db/$name.srl
 database = $home/ecdsa_db/$name.index
 
 # specifies the directory where new certificates will be placed. Mandatory.
-new_certs_dir = $home/certs
+new_certs_dir = $home/ecdsa_certs
 
 # the file containing the CA certificate. Mandatory
 certificate = $home/$name.crt
