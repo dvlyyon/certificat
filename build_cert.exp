@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+set filename [lindex $argv 0];
+spawn $filename
+set timeout 10
+expect {
+    "Sign the certificate?" { send -- "y\r" ; exp_continue }
+    "certified, commit?" { send -- "y\r" ; exp_continue }
+    "Enter Export Password" { send -- "e2e!Net4u#\r" ; exp_continue }
+    -re "\\$ $" exit
+}
+
