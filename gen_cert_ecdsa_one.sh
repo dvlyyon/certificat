@@ -5,7 +5,7 @@ db_dir=./ecdsa_db
 ncrt_dir=./ecdsa_certs
 
 ca_name="ecdsa_ca"
-leaf_name="ecdsa_myne1_nohost"
+leaf_name="ecdsa_myne1_ipv6"
 
 
 

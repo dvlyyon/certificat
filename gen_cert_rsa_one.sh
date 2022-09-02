@@ -5,13 +5,13 @@ db_dir=./db
 ncrt_dir=./certs
 
 ca_name="ca"
-leaf_name="myne1_nohost"
+leaf_name="myne1_ipv6"
 
 
 
-openssl genrsa -out $pr_dir/$leaf_name.key 4096
+openssl genrsa -out $pr_dir/$leaf_name.key 2048
 openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$leaf_name.key -out $pr_dir/$leaf_name.pkcs8.key
-openssl req -new -sha512 -key $pr_dir/$leaf_name.pkcs8.key -config $leaf_name.cnf -out $crt_dir/$leaf_name.csr
+openssl req -new -sha256 -key $pr_dir/$leaf_name.pkcs8.key -config $leaf_name.cnf -out $crt_dir/$leaf_name.csr
 
 openssl ca -config $ca_name.cnf -in $crt_dir/$leaf_name.csr -out $crt_dir/$leaf_name.crt
 
