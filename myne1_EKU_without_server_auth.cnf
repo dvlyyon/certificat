@@ -1,6 +1,6 @@
 [ default ]
 home = .
-name = myne1_ipv6
+name = myne1_EKU_without_server_auth
 
 [ req ]
 default_bits = 2048
@@ -20,7 +20,7 @@ emailAddress=it@$name.com.cn
 
 [ v3_req ]
 # keyUsage=critical,keyCertSign,cRLSign
-extendedKeyUsage=serverAuth,codeSigning,clientAuth
+extendedKeyUsage=codeSigning,clientAuth
 basicConstraints=CA:false
 subjectKeyIdentifier = hash
 subjectAltName = @alternate_names
@@ -29,7 +29,12 @@ subjectAltName = @alternate_names
 DNS.1        = client.g31ne.com
 DNS.2        = client.com.cn
 IP.1 	= 10.13.11.182
-IP.2 	= 2001:db8:0:1::202:84
-IP.3 	= 172.29.202.84
-IP.4    = 172.29.202.90
-IP.5    = 2001:db8:0:1::200
+IP.2 	= 10.13.51.92
+IP.3 	= 172.29.22.165
+IP.4 	= 172.29.22.165
+IP.5 	= 172.29.202.84
+IP.6 	= 172.29.202.83
+IP.7 	= 172.29.202.81
+IP.8 	= 172.29.202.82
+IP.9 	= 172.29.202.87
+
