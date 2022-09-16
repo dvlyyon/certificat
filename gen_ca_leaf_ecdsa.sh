@@ -62,12 +62,12 @@ openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$leaf_name11.key -out $pr_dir/$leaf_na
 openssl req -new -sha256 -key $pr_dir/$leaf_name11.pkcs8.key -config $leaf_name11.cnf -out $crt_dir/$leaf_name11.csr
 
 echo "create $leaf_name111"
-openssl ecparam -name secp128r1 -genkey -out $pr_dir/$leaf_name111.key
+openssl ecparam -name prime256v1 -genkey -out $pr_dir/$leaf_name111.key
 openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$leaf_name111.key -out $pr_dir/$leaf_name111.pkcs8.key
 openssl req -new -sha384 -key $pr_dir/$leaf_name111.pkcs8.key -config $leaf_name111.cnf -out $crt_dir/$leaf_name111.csr
 
 echo "create $leaf_name1111"
-openssl ecparam -name secp128r1 -genkey -out $pr_dir/$leaf_name1111.key
+openssl ecparam -name prime256v1 -genkey -out $pr_dir/$leaf_name1111.key
 openssl pkcs8 -topk8 -nocrypt -in $pr_dir/$leaf_name1111.key -out $pr_dir/$leaf_name1111.pkcs8.key
 openssl req -new -sha256 -key $pr_dir/$leaf_name1111.pkcs8.key -config $leaf_name1111.cnf -out $crt_dir/$leaf_name1111.csr
 

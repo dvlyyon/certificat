@@ -1,0 +1,42 @@
+[ default ]
+home = .
+name = ecdsa_myne1_aux1
+
+[ req ]
+default_bits = 2048
+
+prompt = no
+distinguished_name=req_distinguished_name
+req_extensions = v3_req
+
+[ req_distinguished_name ]
+countryName=CN
+stateOrProvinceName=Shanghai
+localityName=Pudong
+organizationName=$name
+organizationalUnitName=$name.unit
+commonName=$name.com.cn
+emailAddress=it@$name.com.cn
+
+[ v3_req ]
+# keyUsage=critical,keyCertSign,cRLSign
+extendedKeyUsage=serverAuth,codeSigning,clientAuth
+basicConstraints=CA:false
+subjectKeyIdentifier = hash
+subjectAltName = @alternate_names
+
+[ alternate_names ]
+DNS.1        = client.g31ne.com
+DNS.2        = client.com.cn
+IP.1 	= 50.10.10.84
+IP.2 	= 50.10.10.85
+IP.3 	= 84.1.1.1
+IP.4 	= 85.1.1.1
+IP.5 	= 172.29.202.90
+IP.6 	= 2003::85
+IP.7 	= 2003::84
+IP.8 	= 2001:db8::85
+IP.9 	= 2001:db8::84
+IP.10   = 2001:db8:0:1::200
+IP.11   = 172.29.202.84
+IP.12   = 2001:db8:0:1::400
