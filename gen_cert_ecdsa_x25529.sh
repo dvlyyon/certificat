@@ -6,7 +6,7 @@ ncrt_dir=./ecdsa_certs
 
 ca_name="ecdsa_ca"
 #leaf_name="ecdsa_myne1_ipv6"
-leaf_name="ecdsa_myne1_521_nohost"
+leaf_name="ecdsa_myne1_x25519"
 
 
 
