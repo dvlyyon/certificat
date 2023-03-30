@@ -19,7 +19,8 @@ commonName=InfrIVTestSH
 emailAddress=iv@infr.com.cn
 
 [ v3_req ]
-# keyUsage=critical,keyCertSign,cRLSign
+keyUsage=keyCertSign,cRLSign
+extendedKeyUsage=serverAuth,clientAuth
 basicConstraints=CA:false
 subjectKeyIdentifier = hash
 subjectAltName = @alternate_names
