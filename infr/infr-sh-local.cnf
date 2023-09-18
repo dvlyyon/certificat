@@ -19,24 +19,24 @@ commonName=InfrIVTestSH
 emailAddress=iv@infr.com.cn
 
 [ v3_req ]
-keyUsage=keyCertSign,cRLSign
-extendedKeyUsage=serverAuth,clientAuth
+# keyUsage=keyCertSign,cRLSign
+extendedKeyUsage=serverAuth,codeSigning,clientAuth
 basicConstraints=CA:false
 subjectKeyIdentifier = hash
 subjectAltName = @alternate_names
 
 [ alternate_names ]
 DNS.1        = sh.gne.com
-DNS.2        = infr.com.cn
+DNS.2        = infinera.com.cn
 IP.1 	= 172.29.202.81
 IP.2 	= 172.29.202.82
 IP.3 	= 172.29.202.83
 IP.4 	= 172.29.202.84
-IP.5 	= 172.29.202.85
-IP.6 	= 172.29.202.86
+IP.5 	= 172.29.202.153
+IP.6 	= 172.29.202.152
 IP.7 	= 172.29.202.87
 IP.8 	= 172.29.202.88
-IP.9 	= 172.29.201.177
-IP.10 	= 172.29.201.178
+IP.9 	= 172.29.201.194
+IP.10 	= 172.29.201.181
 IP.11 	= 172.29.201.179
 
